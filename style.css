@@ -1,6 +1,65 @@
 body {
-    background-color: rgb(125,198,205);
-    color: rgb(45, 45, 45);
+    background: rgb(158, 172, 136);
+    color: rgb(14, 49, 18);
     padding: 10px;
     font-family: arial;
+    font-weight: bold;
+}
+#all-contents {
+  max-width: 800px;
+    margin: auto;
+}
+
+/* navigation menu */
+nav {
+    background: rgb(67, 84, 47);
+   margin: 0 auto;
+   margin-bottom: 20px;
+    display: flex;
+    padding: 10px;
+}
+h1 {
+    display: flex;
+    align-items: center;
+    color: rgb(185, 219, 184);
+    flex: 1;
+    margin: 0;
+}
+#nav-ul {
+    list-style-image: none;
+}
+.nav-li {
+    display: inline-block;
+    padding: 0 10px;
+}
+a {
+    text-decoration: none;
+    color: rgb(185, 219, 184);
+}
+
+/* main container area beneath menu */
+main {
+    background: rgb(217, 236, 217);
+    display: flex;
+}
+.sidebar {
+    margin-right: 25px;
+    padding: 10px;
+}
+.sidebar-img {
+    width: 200px;
+}
+.content {
+    flex: 1;
+    padding: 15px;
+}
+
+/* portfolio styles */
+#interests {
+    border: 4px rgb(43, 117, 56) ridge;
+    border-radius: 15px 50px;
+    padding: 8px;
+}
+h2, h3 {
+    margin: 0px;
 }

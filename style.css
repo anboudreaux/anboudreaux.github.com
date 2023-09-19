@@ -38,6 +38,10 @@ a {
     color: rgb(185, 219, 184);
 }
 
+a:hover {
+    color: white
+}
+
 /* main container area beneath menu */
 main {
     background: rgb(217, 236, 217);

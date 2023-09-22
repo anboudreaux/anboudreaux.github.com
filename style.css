@@ -127,3 +127,14 @@ h2, h3 {
 #portfolio a:hover {
     color: white;
 }
+.moth {
+    width: 50px;
+    float: right;
+    transform: rotate(300deg);
+    margin-top: -45px;
+    margin-left: 10px;
+
+}
+.moth:hover {
+    transform: scale(1.2) rotate(300deg);
+}

@@ -30,7 +30,7 @@ function main() {
   collectablesCollide(); //checks if player has touched a collectable
 
   animate(); //this changes halle's picture to the next frame so it looks animated.
-  // debug()                   //debugging values. Comment this out when not debugging.
+  debug()                   //debugging values. Comment this out when not debugging.
   drawRobot(); //this actually displays the image of the robot.
 }
 
@@ -103,6 +103,7 @@ function changeAnimationType() {
     } else if (player.onGround) {
       if (keyPress.down) {
         currentAnimationType = animationTypes.duck;
+        hitBoxHeight = hitBoxHeight/2;
         if (duckTimer < DUCK_COUNTER_IDLE_VALUE) {
           // not using index 0 because the animation is too slow then
           frameIndex = 3;

@@ -28,12 +28,12 @@ $(function () {
      * Comment the lines out to remove the grid
      */
 
-    for (let i = 100; i < canvas.width; i += 100) {
-      createPlatform(i, canvas.height, -1, -canvas.height);
-    }
-    for (let i = 100; i < canvas.height; i += 100) {
-      createPlatform(canvas.width, i, -canvas.width, -1);
-    }
+    // for (let i = 100; i < canvas.width; i += 100) {
+    //   createPlatform(i, canvas.height, -1, -canvas.height);
+    // }
+    // for (let i = 100; i < canvas.height; i += 100) {
+    //   createPlatform(canvas.width, i, -canvas.width, -1);
+    // }
 
     /////////////////////////////////////////////////
     //////////ONLY CHANGE BELOW THIS POINT///////////
@@ -50,16 +50,25 @@ createPlatform(830, 400, 10, 15);
 createPlatform(680, 279, 10, 15);
 createPlatform(830, 640, 10, 15);
 createPlatform(420, 220, 200, 10);
-createPlatform();
+createPlatform(0, 123, 50, 15);
+createPlatform(200, 230, 50, 15);
+createPlatform(1050, 360, 50, 505);
+createPlatform(1350, 380, 50, 500);
+createPlatform(980, 279, 10, 15)
+createPlatform(1070, 360, 140, 105);
+createPlatform(1080, 560, 140, 25);
+createPlatform(1290, 380, 60, 50)
+createPlatform(1200, 670, 250, 10);
+createPlatform(100, 250, 10, 50)
 
-    
     // TODO 2
     // Create collectables
     // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
     createCollectable("max", 750, 280, 0, 10);
-
+    createCollectable("grace", 0, 80, .5, 1)
+    createCollectable("database", 1150, 700, 0, 1)
 
 
     // TODO 3
@@ -69,7 +78,7 @@ createPlatform();
     // example usage: createCannon(side, position, delay, width, height)
 createCannon("bottom", 700, 500, 20, 20);
 createCannon("right", 190, 850, 15, 15)
-
+createCannon("top", 1300, 650, 20, 20)
 
     /////////////////////////////////////////////////
     //////////ONLY CHANGE ABOVE THIS POINT///////////

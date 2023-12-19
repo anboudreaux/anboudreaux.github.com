@@ -6,19 +6,38 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
+			/* still working on it?? */
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(black);
+			/* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/DVD_video_logo.png/800px-DVD_video_logo.png"); */
 			font-size: 300%;
 			text-align: center;
+			font-family: Trebuchet MS;
+			font-weight: bolder;
+			color: white;
 			user-select: none;
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: left;  /* <--- Change me! */
+			animation-name: box;
+  			animation-duration: 5s;
+  			animation-iteration-count: infinite;
 		}
+		@keyframes box {
+			/* 0% {background-color: rgb(255, 255, 255);} */
+		5% {background-color: red;}
+		25% {background-color: orange;}
+		40% {background-color: yellow;}
+		60% {background-color: green;}
+		75% {background-color: blue;}
+		90% {background-color: purple;}
+		100% {background-color: black;}
+		}	
 		.board{
 			height: 100vh;
+			background-color: rgb(0, 0, 0);
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -48,8 +67,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY)
 			}
 
 			// changes the text displayed on the Box
@@ -62,17 +82,39 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+			var positionX = 0 ;
+			var points = 0;
+			var speed = 10;
+			var positionY = 0;
+			var speedY = 10;
+			var boardheight = jQuery(window).height(); 
 
-			
+			// var colorStr = Math.random() * 255
+			// // box.css('background-color', colorStr);
+
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
 			function update() {
-				
-
+				/* Your Code to Increase positionX by 10 HERE */
+				positionX = positionX + speed;
+				moveBoxTo(positionX, positionY);
+				if(positionX > boardWidth) {
+					speed *= -1;
+				}
+				if(positionX < 0) {
+					speed *= -1;
+				}
+				positionY = positionY + speedY;
+				// moveBoxTo(positionY);
+				if(positionY > boardheight) {
+					speedY *= -1;
+				}
+				if(positionY < 0) {
+					speedY *= -1;
+				}
 			};
 
 			/* 
@@ -81,10 +123,25 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
-
+				positionX = 10;
+				points = points + 1;
+				// speed = speed + 3;
+				changeBoxText(points)
+				if(speed > 0) {
+					speed += 3;
+				}
+				else if(speed < 0) {
+					speed -=3;
+				}
+				positionY = 10;
+				if(speedY > 0) {
+					speedY += 3;
+				}
+				else if(speedY < 0) {
+					speedY -=3;
+				}
 			};
+
 		})();
 	</script>
 </body>

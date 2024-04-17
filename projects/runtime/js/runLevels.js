@@ -36,7 +36,26 @@ var runLevels = function (window) {
    createSawBlade(2000, 390);
    createSawBlade(1000, 360);
  
-    
+   var enemy = game.createGameItem("enemy", 25);
+  var redSquare = draw.rect(50, 50, "red");
+  redSquare.x = -25;
+  redSquare.y = -25;
+  enemy.addChild(redSquare);
+  enemy.x = 600;
+  enemy.y = groundY - 50;
+  enemy.velocityX = -2
+  enemy.rotationalVelocity = -5 
+
+  game.addGameItem(enemy);
+
+  enemy.onPlayerCollision = function () {
+    game.changeIntegrity(-10) 
+  };
+
+  enemy.onProjectileCollision = function () {
+    game.increaseScore(100);
+  enemy.fadeOut();
+  }
 
     function startLevel() {
       // TODO 13 goes below here
